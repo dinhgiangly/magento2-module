@@ -1,0 +1,146 @@
+//
+//  Common
+// Apply to all the screen sizes
+//  _____________________________________________
+@font-size-nav: 16px;
+@font-weight-nav: 400;
+@font-family: 'DM Sans', sans-serif;
+@color-text:#ffffff;
+@color-footer-a: #aaaaaa;
+@color-footer-icon: #f41b15;
+
+& when (@media-common = true) {
+    .page-footer{
+        background: #252525 0% 0% no-repeat padding-box !important;
+        margin-top: 50px !important;
+        color: @color-text;
+        font-family: @font-family;
+        padding: 0px 20px;
+        .footer-content{
+            font-size: 16px;
+            i{
+                font-family: 'FontAwesome';
+                font-style: inherit;
+                margin-right: 5px
+            }
+            .footer-top{
+                justify-content: center;
+                // padding: 0px 20px;
+                margin: -90px auto 0;
+                max-width: 1440px;
+                .footer-contact{
+                    background-image: url('../images/iStock.png');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    .content-contact{
+                        padding: 50px;
+                        display: flex;
+                        justify-content: space-between;
+                        h3{
+                            font-size: 44px;
+                            color: @color-text;
+                        }
+                        a{
+                            font-size: 14px;
+                            color: @color-text;
+                            border: 2px solid @color-text;
+                            padding: 25px;
+                            text-transform: uppercase;
+                            text-decoration: none;
+                            border-radius: 6px;
+                            &:hover{
+                                background: @color-text;
+                                color: #0660a9;
+                            }
+                            i{
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                }
+            }
+            //bottom
+            .footer-bottom{
+                display: grid;
+                grid-template-columns: 40% 20% 20% 20%;
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 100px;
+                .footer-left{
+                    display: flex;
+                    align-items: center;
+                    margin-right: 20px;
+                    .footer-infor{
+                        margin-left: 20px;
+                        display: inline-block;
+                        p{
+                            margin-bottom: 50px;
+                            line-height: 25px;
+                            color: @color-footer-a;
+                        }
+                    }
+                }
+                h6{
+                    font-size: 24px;
+                }
+                .items{
+                    
+                    .item{
+                        a{
+                            text-decoration: none;
+                            color: @color-footer-a;
+                            line-height: 30px;
+                            &:hover{
+                                color: @color-footer-icon;
+                            }
+                        }
+                        .item-icon{
+                            i{
+                                color: @color-footer-icon;
+                            }
+                            .fa-solid.fa-location-pin::before{
+                                content: '\f041';
+                            }
+                        }
+                        .item-icon.phone{
+                            font-size: 24px;
+                            i{
+                                color: @color-text;
+                                background: @color-footer-icon;
+                                padding: 5px;
+                                border-radius: 6px;
+                            }
+                        }
+                    }
+                }
+            }
+            .scroll{
+                content: "";
+                position: fixed;
+                z-index: 50;
+                background: #fd8420;
+                bottom: 150px;
+                width: 50px;
+                height: 50px;
+                right: 20px;
+                color: #fff;
+                border-radius: 30px;
+                border: 1px solid #fd8420;
+                cursor: pointer;
+                &:hover{
+                    background: #fff;
+                    color: #fd8420;
+                }
+                &::before{
+                    content: '\f077';
+                    font-family: 'FontAwesome';
+                    position: absolute;
+                    left: 50%;
+                    top: 44%;
+                    transform: translate(-50%, -50%);
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

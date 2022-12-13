@@ -1,0 +1,94 @@
+<div class="footer-top">
+    <div class="footer-contact">
+        <div class="content-contact">
+            <h3> Enquire to Know More About Our Products</h3>
+            <a href="http://shop.magento.com/contact-us" class="link-contact">
+                <i class="fa-thin fa-phone"></i>
+                 Contact us now
+            </a>
+        </div>
+    </div>
+</div>
+<div class="footer-bottom">
+   <div class="footer-left">
+        <div class="logo-footer">
+            <img src='<?php echo $this->getViewFileUrl('images/kaibertech-logo@2x.png'); ?>' alt="logo"/>
+        </div>
+        <div class="footer-infor">
+             <p>Copyright © 2021 KaiberTech. All rights reserved. Web Excellence by Verz</p>
+             <img src='<?php echo $this->getViewFileUrl('images/Group 18.png'); ?>' alt="image-icon"/>
+        </div>
+    </div>
+    <div class="footer-sitemap">
+        <h6> Sitemap</h6>
+        <ul class="items">
+            <li class="item">
+                <a href="<?= $block->escapeUrl($block->getUrl('')) ?>"><?php echo __('Home') ?></a>
+            </li>
+            <li class="item">
+                <a href="<?= $block->escapeUrl($block->getUrl('about_us')) ?>"><?php echo __('About Us') ?></a>
+            </li>
+            <li class="item">
+                <a href="<?= $block->escapeUrl($block->getUrl('product')) ?>"><?php echo __('Product') ?></a>
+            </li>
+            <li class="item">
+                <a href="<?= $block->escapeUrl($block->getUrl('our-brands')) ?>"><?php echo __('Our Brands') ?></a>
+            </li>
+            <li class="item">
+                <a href="<?= $block->escapeUrl($block->getUrl('contact-us')) ?>"><?php echo __('Contact Us') ?></a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-useful-link">
+        <h6> Useful Link</h6>
+        <ul class="items">
+            <li class="item">
+                <a href="<?= $block->getUrl('customer/account') ?>"><?php echo __('My Account') ?></a>
+            </li>
+            <li class="item">
+                <a href="#"><?php echo __('Shipping & Delivery') ?></a>
+            </li>
+            <li class="item">
+                <a href="#"><?php echo __('Return Exchange') ?></a>
+            </li>
+            <li class="item">
+                <a href="#"><?php echo __('Privacy Policy') ?></a>
+            </li>  
+            <li class="item">
+                <a href="#"><?php echo __('Tems Condition') ?></a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-get-in-touch">
+        <h6> Get in Touch</h6>
+        <ul class="items">
+            <li class="item"> 
+                <a href="#" class="item-icon phone"><i class="fa-solid fa-phone"></i> +65 1234 5678</a>
+            </li>
+            <li class="item"> 
+                <a href="#" class="item-icon"><i class="fa-solid fa-location-pin"></i> 12 Lorem Ipsum 1 #03-04 Singapore 567890</a>
+            </li>
+            <li class="item"> 
+                <a href="#" class="item-icon"><i class="fa-light fa-laptop"></i> enquiry@kaibertech.com</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="scroll"></div>
+<script>
+    require([
+        'jquery'
+    ], function($){
+        jQuery(window).scroll(function() {
+            if (jQuery(this).scrollTop() > 300) {
+                jQuery('.scroll').fadeIn();
+            } else {
+                jQuery('.scroll').fadeOut();
+            }
+        });
+        jQuery(".scroll").click(function() {
+            jQuery("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });
+    });
+</script>

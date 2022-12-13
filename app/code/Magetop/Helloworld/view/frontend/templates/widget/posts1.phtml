@@ -1,0 +1,68 @@
+<?php if($block->getData('posts_title')): ?>
+	<h2 class='posts_title'><?php echo $block->getData('posts_title'); ?></h2>
+	<p>This is sample widget. Perform your code here.</p><br/>
+<?php endif; ?>
+<h1 style="color: blue;">Template Gird</h1>
+<?php if($block->getData('description')): ?>
+	<p class='description'><?php echo $block->getData('description'); ?></p>
+<?php endif; ?>
+
+
+<?php
+	$posts=$block->getCollection();
+	$postSelects=explode (',', $block->getSelection('data_options_sl'));
+	$numberShow=$block->getSelection('post_count_sl');
+	$enableSlider=$block->getSelection('options_enable');
+	$loop=$block->getSelection('options_loop');
+?>
+<?php if($enableSlider=="enable"){?>
+	<div class="slick-slider">
+		<?php foreach ($posts as $post) : ?>
+			<?php foreach ($postSelects as $postSelect) : ?>
+				<?php 
+					$count=0;
+					if($block->escapeUrl($post->getId())==$postSelect) {?>
+						<div class="item">
+							<div class="post-list-item" style="margin-left: 5px">
+								<div class="post-item-wraper">
+									<?php if ($post->getImage()) : ?>
+										<div class="post-image">
+											<a href="<?= $block->escapeUrl($post->getUrl()) ?>">
+												<img class="img-responsive" style="height: 220px"
+													src="<?= $block->escapeUrl($block->resizeImage($post->getImage(), '400x')) ?>"
+													alt="<?= $block->escapeHtml($post->getName()); ?>"/>
+											</a>
+										</div>
+									<?php endif; ?>
+									<div class="post-info-wraper">
+										<h2 class="mp-post-title" style="font-size: 22px">
+											<a class="post-link-title" title="<?= $block->escapeHtmlAttr($post->getName()) ?>"
+											href="<?= $block->escapeUrl($post->getUrl()) ?>">
+												<?= $block->escapeHtml($post->getName()) ?>
+											</a>
+										</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+				<?php }?>
+			<?php endforeach; ?>
+		<?php endforeach; ?>
+	</div>
+
+	<script>
+		require(['jquery', 'jquery/ui', 'slick'], function($) {
+			$(document).ready(function() {
+				$(".slick-slider").slick({
+					dots: true,
+					infinite: false,
+					slidesToShow: <?php if($numberShow>=3){echo $numberShow;} else {echo '4';}?>,
+					slidesToScroll: 1,
+					autoplay: true,
+					autoplaySpeed: 3000,
+					infinite: <?php echo $loop;?>,
+				});
+			});
+		});
+	</script>
+<?php }?>

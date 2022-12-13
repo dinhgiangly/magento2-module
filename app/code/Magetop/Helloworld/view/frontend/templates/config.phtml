@@ -1,0 +1,17 @@
+<?php
+/**
+ * @var \Magetop\Helloworld\Block\Config $block
+ */
+$configValueText = $block->showConfigValue('text_display');
+$configValueTextarea = $block->showConfigValue('textarea_display');
+
+$urlMedia = $block->showBaseUrlMedia();
+$imgSystem = $block->showConfigValue('image');
+
+echo $configValueText;?>
+<div class="image-system-wishlist"><img src="<?php echo $urlMedia.'helloworld/backendimage/'. $imgSystem?>" ></div>
+<?php 
+    echo $configValueTextarea; 
+    echo "<br />".$urlMedia;
+    echo "<br />".$imgSystem;
+?>

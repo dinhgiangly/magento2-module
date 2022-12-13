@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:helloworld:Magento_Widget:etc/widget.xsd">
+	<widget class="Magetop\Helloworld\Block\Widget\Posts" id="magetop_helloworld_posts">
+		<label>Blog Posts</label>
+		<description>Posts</description>
+		<parameters>
+			<parameter name="posts_title" sort_order="1" visible="true" xsi:type="text">
+				<label translate="true">Title</label>
+				<description>Enter your title</description>
+			</parameter>
+			<parameter name="description" xsi:type="block" required="true" visible="true" sort_order="3">
+				<label translate="true">Description</label>
+				<block class="Magetop\Helloworld\Block\Adminhtml\Widget\TextField"/>
+			</parameter> 
+
+			<parameter name="template" xsi:type="select">
+                <options>
+                    <option name="template-one" value="Magetop_Helloworld::widget/posts.phtml">
+                        <label>Template List</label>
+                    </option>
+                    <option name="template-two" value="Magetop_Helloworld::widget/posts1.phtml">
+                        <label>Template Grid</label>
+                    </option>
+                </options>
+            </parameter>
+
+           <parameter name="data_options" xsi:type="multiselect" visible="true" source_model="Magetop\Helloworld\Model\Config\Source\DataOptions" sort_order="4" >
+               <label>Data Options</label>
+               <description>Select data options </description>
+           </parameter>
+		   
+            <parameter name="post_count" xsi:type="block" required="true" visible="true">
+                <label>Numbers of Posts Display</label>
+                <block class="Magetop\Helloworld\Block\Adminhtml\Widget\Number"/>
+            </parameter>
+
+			<parameter name="options_enable" xsi:type="select" visible="true" source_model="Magetop\Helloworld\Model\Config\Source\SliderOptions" sort_order="5" >
+               <label>Enable/Disable slider</label>
+               <description>Enable/Disable slider</description>
+           </parameter>
+
+           <parameter name="options_loop" xsi:type="select" visible="true" source_model="Magetop\Helloworld\Model\Config\Source\SliderLoop" sort_order="5" >
+               <label>Loop</label>
+               <description>Enable/Disable loop</description>
+           </parameter>
+
+            <parameter name="data_options_sl" xsi:type="multiselect" visible="true" source_model="Magetop\Helloworld\Model\Config\Source\DataOptions" sort_order="6" >
+               <label>Data Options slider</label>
+               <description>Select data options slider</description>
+           </parameter>
+		   
+            <parameter name="post_count_sl" xsi:type="block" required="true" visible="true">
+                <label>Numbers of Posts Display slider</label>
+                <block class="Magetop\Helloworld\Block\Adminhtml\Widget\Number"/>
+            </parameter>
+		</parameters>
+
+		<containers>
+            <container name="content">
+                <template name="template_one" value="template-one" />
+                <template name="template_two" value="template-two" />
+            </container>
+        </containers>
+
+	</widget>
+</widgets>

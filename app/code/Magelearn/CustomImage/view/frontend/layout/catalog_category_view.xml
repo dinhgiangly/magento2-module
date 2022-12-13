@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="category.view.container">
+            <block class="Magelearn\CustomImage\Block\Image" name="magelearn_category_image" template="Magelearn_CustomImage::image.phtml">
+                <arguments>
+                    <argument name="image_code" xsi:type="string">custom_image</argument>
+                    <argument name="css_class" xsi:type="string">custom_image</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magento_Theme::css/owl.carousel.css" />
+        <css src="Magento_Theme::css/owl.theme.default.css" />
+        <script src="Magento_Theme::js/owl.carousel.min.js"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+        <script src="https://kit.fontawesome.com/yourcode.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+     </head>
+</page>
